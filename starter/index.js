@@ -86,4 +86,19 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
-console.log();//added console.log to see the finances in the console
+//added console.log to see the finances in the console
+var netTotal = 0;
+//added this function to find the net total of the profits/losses//
+function findSum (){
+    var Profits=0;
+    for (let i=0; i< finances.length; i++){
+        netTotal += finances[i][1];
+        
+    }
+    console.log(netTotal);
+    
+}
+
+findSum();
+
+
