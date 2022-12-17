@@ -88,7 +88,7 @@ var finances = [
 ];
 //added console.log to see the finances in the console
 var netTotal = 0;
-//added this function to find the net total of the profits/losses//
+//added this function to find the net total of the profits/losses//LOOP
 function findSum (){
     var Profits=0;
     for (let i=0; i< finances.length; i++){
@@ -98,7 +98,8 @@ function findSum (){
     console.log(netTotal);
     
 }
-
-findSum();
+// finding the total of months in the data set
+var Totalmonths = finances.length;
+console.log(finances.length);
 
 
