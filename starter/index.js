@@ -97,7 +97,7 @@ var decrease = 0 ;
 for (let i=1; i< finances.length; i++){
     netTotal += finances[i][1];
 
-                   //last month - actual month to calculate the increase
+                   //actual month - last month to calculate the increase
     if(decrease < (finances[i][1] - finances[i-1][1])){
         decrease = finances[i][1] - finances[i-1][1];
         greatestDecreaseMonth = finances[i][0];
