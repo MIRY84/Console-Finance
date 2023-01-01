@@ -86,24 +86,32 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
-//added console.log to see the finances in the console
-var netTotal = 0;
-//added this function to find the net total of the profits/losses//LOOP
 
+//adding variables for calculations
+
+var Total = 0;
 var greatestIncreaseMonth;
 var greatestDecreaseMonth;
 var increase = 0;
 var decrease = 0 ;
-for (let i=1; i< finances.length; i++){
-    netTotal += finances[i][1] - finances[i-1][1];
+var netTotal = 0;
 
-                   //actual month - last month to calculate the increase
+//finding the net total between losses/profits over the entire period
+for (let i=0; i<finances.length; i++){
+    netTotal += finances[i][1]
+}
+
+//total sum of profits/losses in the array
+for (let i=1; i< finances.length; i++){
+    Total += finances[i][1] - finances[i-1][1];
+
+                   //actual month - last month to calculate the greatest increase, month/number
     if(increase < (finances[i][1] - finances[i-1][1])){
         increase = finances[i][1] - finances[i-1][1];
         greatestIncreaseMonth = finances[i][0];
     }
     
-//actual month - last month to calculate decrease
+//actual month - last month to calculate the greatest decrease month/number
     if(decrease > (finances[i][1] - finances[i-1][1])){
         decrease = finances[i][1] - finances[i-1][1]
         greatestDecreaseMonth = finances[i][0];
@@ -114,8 +122,10 @@ for (let i=1; i< finances.length; i++){
 // finding the total of months in the data set
 var totalMonths = finances.length;
 
-//find the average
-var average = (netTotal/(totalMonths-1));
+//find the average from the totalsum divided the number of months - the last one
+var average = (Total/(totalMonths-1));
+
+//tryng logging the results
 
 console.log("Total number of months: " + totalMonths);
 console.log("Net total amount profit losses: " + netTotal);
