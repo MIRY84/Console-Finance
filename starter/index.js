@@ -98,15 +98,15 @@ for (let i=1; i< finances.length; i++){
     netTotal += finances[i][1];
 
                    //actual month - last month to calculate the increase
-    if(decrease < (finances[i][1] - finances[i-1][1])){
-        decrease = finances[i][1] - finances[i-1][1];
-        greatestDecreaseMonth = finances[i][0];
+    if(increase < (finances[i][1] - finances[i-1][1])){
+        increase = finances[i][1] - finances[i-1][1];
+        greatestIncreaseMonth = finances[i][0];
     }
     
-
-    if(increase > (finances[i][1] - finances[i-1][1])){
-        increase = finances[i][1] - finances[i-1][1]
-        greatestIncreaseMonth = finances[i][0];
+//actual month - last month to calculate decrease
+    if(decrease > (finances[i][1] - finances[i-1][1])){
+        decrease = finances[i][1] - finances[i-1][1]
+        greatestDecreaseMonth = finances[i][0];
     }
 }    
 
