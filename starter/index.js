@@ -95,7 +95,7 @@ var greatestDecreaseMonth;
 var increase = 0;
 var decrease = 0 ;
 for (let i=1; i< finances.length; i++){
-    netTotal += finances[i][1];
+    netTotal += finances[i][1] - finances[i-1][1];
 
                    //actual month - last month to calculate the increase
     if(increase < (finances[i][1] - finances[i-1][1])){
@@ -110,15 +110,17 @@ for (let i=1; i< finances.length; i++){
     }
 }    
 
+
 // finding the total of months in the data set
 var totalMonths = finances.length;
 
 //find the average
-var average = (netTotal/totalMonths);
+var average = (netTotal/(totalMonths-1));
 
 console.log("Total number of months: " + totalMonths);
 console.log("Net total amount profit losses: " + netTotal);
 console.log("greatest decrease:"+greatestDecreaseMonth+"  "+(decrease));
 console.log("greatest increase:"+greatestIncreaseMonth+"  "+(increase));
+console.log(average)
 
 
