@@ -89,17 +89,36 @@ var finances = [
 //added console.log to see the finances in the console
 var netTotal = 0;
 //added this function to find the net total of the profits/losses//LOOP
-function findSum (){
-    var Profits=0;
-    for (let i=0; i< finances.length; i++){
-        netTotal += finances[i][1];
-        
+
+var greatestIncreaseMonth;
+var greatestDecreaseMonth;
+var increase = 0;
+var decrease = 0 ;
+for (let i=1; i< finances.length; i++){
+    netTotal += finances[i][1];
+
+                   //last month - actual month to calculate the increase
+    if(decrease < (finances[i-1][1] - finances[i][1])){
+        decrease = finances[i-1][1] - finances[i][1]
+        greatestDecreaseMonth = finances[i][0];
     }
-    console.log(netTotal);
     
-}
+
+    if(increase > (finances[i-1][1] - finances[i][1])){
+        increase = finances[i-1][1] - finances[i][1]
+        greatestIncreaseMonth = finances[i][0];
+    }
+}    
+
 // finding the total of months in the data set
-var Totalmonths = finances.length;
-console.log(finances.length);
+var totalMonths = finances.length;
+
+//find the average
+var average = (netTotal/totalMonths);
+
+console.log("Total number of months: " + totalMonths);
+console.log("Net total amount profit losses: " + netTotal);
+console.log("greatest decrease:"+greatestDecreaseMonth+"  "+(decrease));
+console.log("greatest increase:"+greatestIncreaseMonth+"  "+(increase));
 
 
