@@ -127,10 +127,13 @@ var average = (Total/(totalMonths-1));
 
 //tryng logging the results
 
-console.log("Total number of months: " + totalMonths);
-console.log("Net total amount profit losses: " + netTotal);
-console.log("greatest decrease:"+greatestDecreaseMonth+"  "+(decrease));
-console.log("greatest increase:"+greatestIncreaseMonth+"  "+(increase));
-console.log(average.toFixed(2))
+console.log("Financial Analysis")
+console.log("----------------------")
+
+console.log("Total Months: " + totalMonths);
+console.log("NetTotal: " + "$" +netTotal);
+console.log("Greatest Decrease in Profits: "+ greatestDecreaseMonth  + "" +" $"+decrease);
+console.log("Greatest Increase in Profits: "+ greatestIncreaseMonth  + "" + " $" +increase);
+console.log("Average Change: " + "$" +average.toFixed(2))
 
 
