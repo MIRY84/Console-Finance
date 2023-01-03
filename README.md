@@ -24,7 +24,7 @@ Simply open the browser and right-click to inspect the page.
 When you open the code in the browser the resulting analysis looks like the following:
 
 
-![](images/Financial%20analysis.png)
+![](./assets/images/Financial%20analysis.png)
 
 
 # Credits
